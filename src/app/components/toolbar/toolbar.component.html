@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <a mat-button routerLink="['/']" >
+    <mat-icon>home</mat-icon>
+    <samp>Home</samp>
+  </a>
+   <a mat-button routerLink="['/contats']" >
+    <mat-icon>list-alt</mat-icon>
+    <samp>Contacts </samp>
+  </a>
+    <span class="spacer"></span>
+
+   <a mat-button (click)="emitClick()">
+    <mat-icon>add_box</mat-icon>
+    <samp>New</samp>
+  </a>
+  
+</mat-toolbar>
