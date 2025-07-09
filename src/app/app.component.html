@@ -1,6 +1,9 @@
 <section>
-  
-</section>
+  <mat-card>
+    <mat-card-content>
+      <app-toolbar (onNewContactEvent)="onClikcNewContact()"/>
+      <router-outlet />
 
-<app-toolbar/>
-  <router-outlet/>
+    </mat-card-content>
+  </mat-card>
+</section>
