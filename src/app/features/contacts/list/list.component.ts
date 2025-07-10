@@ -1,6 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { GridComponent } from '../../../components/grid/grid.component';
 import { ColumnKeys, Contact } from '../contact.interfaces';
+import { ContactService } from '../contact.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
+import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+import { AsyncPipe } from '@angular/common';
+import { Observable, tap } from 'rxjs';
 const ELEMENT_DATA: any[] = [
   {id: 1, name: 'Hydrogen', email: 1.0079, phone: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -21,8 +27,23 @@ const ELEMENT_DATA: any[] = [
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
-export class ListComponent {
-  data = ELEMENT_DATA;
+export class ListComponent implements OnInit{
+  data=ELEMENT_DATA;
   displayedColumns: ColumnKeys<Contact> = ['id', 'name', 'phone', 'email', 'action'];
   sortables: ColumnKeys<Contact> = ['id', 'name', 'phone', 'email'];
+    private readonly _contactSVC = inject(ContactService);
+   
+   
+ngOnInit(): void {
+  
+       // get a reference to the user-profile collection
+        //const userProfileCollection = collection(this.firestore, 'users');
+
+        // get documents (data) from the collection using collectionData
+     //   this.users$ = collectionData(userProfileCollection) as Observable<any[]>;
+   }
+   getAllContast(){
+    
+   }
 }
+

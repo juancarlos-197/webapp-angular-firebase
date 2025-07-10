@@ -8,13 +8,10 @@
             @for (column of displayedColumns(); track $index) {
             <!-- Position Column -->
             <ng-container [matColumnDef]="column">
-
                 @if (this.sortableColumns().includes(column)) {
                 <th mat-header-cell *matHeaderCellDef mat-sort-header=""> {{column}}. </th>
-
                 }@else {
                 <th mat-header-cell *matHeaderCellDef> {{column}}. </th>
-
                 }
 
                 <td mat-cell *matCellDef="let element">
