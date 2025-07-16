@@ -3,6 +3,17 @@
     <app-grid [displayedColumns]="displayedColumns" [data]="data" [sortableColumns]="sortables" />
     }
 
-  
-
+    <section >
+        <form [formGroup]="formulario" class="example-form">
+            <mat-form-field class="example-full-width">
+                <mat-label>Title </mat-label>
+                <input matInput formControlName="title" placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field>
+                  <button matFab extended>
+        <mat-icon>favorite</mat-icon>
+        Basic
+      </button>
+            <button matButton="filled" (click)="onSubmit()">Enviar</button>
+        </form>
+    </section>
 </section>
