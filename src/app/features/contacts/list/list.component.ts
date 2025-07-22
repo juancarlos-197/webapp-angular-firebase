@@ -8,6 +8,7 @@ import { AsyncPipe } from '@angular/common';
 import { Observable, tap } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {
@@ -43,7 +44,7 @@ const ELEMENT_DATA: any[] = [
   imports: [GridComponent, ReactiveFormsModule,
     MatSlideToggleModule, MatSlideToggleModule, ReactiveFormsModule,
     FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule,
-    MatButtonModule,MatIconModule
+    MatButtonModule,MatIconModule,
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
