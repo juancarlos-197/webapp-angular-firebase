@@ -13,9 +13,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTable, MatTableModule } from '@angular/material/table';
 import { hasEmailError, isRequired } from '../../utils/valitadators';
 import { AuthService } from '../../data-access/auth.service';
-import { toast } from 'ngx-sonner';
+import { Router, RouterLink } from '@angular/router';
+import { GooleButtonComponent } from '../../ui/goole-button/goole-button.component';
 
-interface FormSignUp {
+interface FormSignIn {
   email: FormControl<string | null>;
   password: FormControl<string | null>;
 
@@ -26,7 +27,7 @@ interface FormSignUp {
   standalone: true,
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatTableModule,],
+    MatTableModule, RouterLink, GooleButtonComponent],
 
   templateUrl: './sign-in.component.html',
   styles: ``
@@ -36,6 +37,7 @@ export class SignInComponent {
 
   private formBuilde = inject(FormBuilder);
   private _authService = inject(AuthService);
+  private _router = inject(Router);
 
   isRequired(field: 'email' | 'password') {
     return isRequired(field, this.formulario)
@@ -43,7 +45,7 @@ export class SignInComponent {
   hasEmailError() {
     return hasEmailError(this.formulario)
   }
-  formulario = this.formBuilde.group<FormSignUp>({
+  formulario = this.formBuilde.group<FormSignIn>({
     email: this.formBuilde.control('', [Validators.required, Validators.email]),
     password: this.formBuilde.control('', Validators.required),
 
@@ -51,18 +53,27 @@ export class SignInComponent {
 
 
   async onSubmit() {
-
-    try {
-      console.log('contacto', this.formulario.getRawValue());
+   console.log('contacto', this.formulario.getRawValue());
       if (this.formulario.invalid) return;
+    try {
       const { email, password } = this.formulario.value;
 
       if (!email || !password) return;
-      await this._authService.signUp({ email, password })
+      await this._authService.signIn({ email, password }),
+        this._router.navigateByUrl('/tasks')
     } catch (error) {
 
     }
 
 
   }
+
+  
+async  signInWithGoogle(){
+  try {
+    await this._authService.signInWithGoogle()
+  } catch (error) {
+    
+  }
+}
 }

@@ -1,13 +1,21 @@
 import { Routes } from '@angular/router';
+import { privateGuard, publicGuard } from './core/auth.guard';
 
 export const routes: Routes = [
-    {path:'', redirectTo:'/auth',pathMatch:'full' },
+    { path: '', redirectTo: '/auth', pathMatch: 'full' },
 
-    { path:'auth', loadChildren:()=> import('./auth/features/auth.routes')},
-         { path:'tasks', 
-            loadChildren:()=> import('./task/features/task.routes')},
+    { canActivateChild:[publicGuard],
+        path: 'auth',
+        loadChildren: () => import('./auth/features/auth.routes')
+    },
+    { canActivateChild:[privateGuard],
+        path: 'tasks',
+        loadChildren: () => import('./task/features/task.routes')
+    },
+    {
+        path: 'contacts',
+        loadChildren: () => import('./features/contacts/contacts.route')
+    },
 
-     { path:'contacts', loadChildren:()=> import('./features/contacts/contacts.route')},
-
-    { path:'**',redirectTo:'/tasks'}
+    { path: '**', redirectTo: '/tasks' }
 ];

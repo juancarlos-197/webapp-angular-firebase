@@ -1,1 +1,78 @@
-<p>sign-up works!</p>
+<div class="container card text-center">
+    <div class="card-header">
+        Presentado
+    </div>
+    <div class="card-body ">
+        <h5 class="card-title">Crear Sesión </h5>
+        <p class="card-text">Este texto está diseñado con algunas propiedades de formato de texto. El encabezado utiliza
+            las propiedades de alineación de texto, transformación de texto y color. El párrafo está sangrado y
+            alineado, y se especifica el espacio entre caracteres. Se ha eliminado el subrayado de este enlace "Pruébelo
+            usted mismo" en color.</p>
+
+        <a href="#" class="btn btn-primary"></a>
+    </div>
+
+    <form class="row g-3" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="col-md-4"></div>
+      <app-goole-button (onClick)="signInWithGoogle()"/>
+        <div class="col-md-4">
+            <label for="validationDefault02" class="form-label">Email </label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="exercise@gmail.com"
+                formControlName="email" required>
+            @if (isRequired('email')) {
+            <div class="alert alert-danger" role="alert">
+                Este campo es requerido
+            </div>
+            }
+            @if (hasEmailError()) {
+            <div class="alert alert-danger" role="alert">
+                El correo debe ser valido </div>
+            }
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <label for="validationDefault04" class="form-label">Password</label>
+            <input type="text" class="form-control" id="validationDefault03" placeholder="....."
+                formControlName="password">
+            @if (isRequired('password')) {
+            <div class="alert alert-danger" role="alert">
+                Este campo es requerido
+            </div>
+            }
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                    Aceptar términos y condiciones.
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Enviar </button>
+        </div>
+<div class="alert alert-primary" role="alert">
+   Ya tienes una cuenta? <a routerLink="/auth/sign-in"  class="alert-link">Iniciar Sesión </a>.
+</div>
+
+    </form>
+    <div class="card-body ">
+        <h5 class="card-title"></h5>
+        <p class="card-text">Con texto de apoyo a continuación como introducción natural a contenido adicional.</p>
+
+        <a href="#" class="btn btn-primary"></a>
+    </div>
+    <div class="card-footer text-body-secondary">... </div>
+</div>
+
+
+
+<div class="container card text-center mb-3" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Contacts</h5>
+        <p class="card-text">Con texto de apoyo a continuación como introducción natural a contenido adicional.t.</p>
+        <a href="#" class="btn btn-primary">Ayuda ...</a>
+    </div>
+</div>

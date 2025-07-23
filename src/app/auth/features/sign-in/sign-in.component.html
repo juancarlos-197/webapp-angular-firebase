@@ -1,9 +1,13 @@
+
+
+
+
 <div class="container card text-center">
     <div class="card-header">
         Presentado
     </div>
     <div class="card-body ">
-        <h5 class="card-title">Contacts express </h5>
+        <h5 class="card-title">Iniciar Sesión  </h5>
         <p class="card-text">Este texto está diseñado con algunas propiedades de formato de texto. El encabezado utiliza
             las propiedades de alineación de texto, transformación de texto y color. El párrafo está sangrado y
             alineado, y se especifica el espacio entre caracteres. Se ha eliminado el subrayado de este enlace "Pruébelo
@@ -14,6 +18,9 @@
 
     <form class="row g-3" [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="col-md-4"></div>
+      <app-goole-button (onClick)="signInWithGoogle()"/>
+
+
         <div class="col-md-4">
             <label for="validationDefault02" class="form-label">Email </label>
             <input type="text" class="form-control" id="validationDefault02" placeholder="exercise@gmail.com"
@@ -52,6 +59,10 @@
         <div class="col-12">
             <button class="btn btn-primary" type="submit">Enviar </button>
         </div>
+<div class="alert alert-primary" role="alert">
+   Aún no tienes una cuenta? <a routerLink="/auth/sign-up" class="alert-link">Crea una cuenta</a>.
+</div>
+
     </form>
     <div class="card-body ">
         <h5 class="card-title"></h5>
