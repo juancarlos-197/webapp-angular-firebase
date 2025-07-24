@@ -14,13 +14,6 @@ import { AuthStateService } from './shared/data-access/auth-state.service';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  private _authState = inject(AuthStateService);
-  private router = inject(Router);
-
-  async logOut() {
-    await this._authState.logOut();
-    this.router.navigateByUrl('/auth/sign-in')
-  }
 
   onClikcNewContact(): void {
 

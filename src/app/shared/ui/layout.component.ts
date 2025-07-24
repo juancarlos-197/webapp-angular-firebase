@@ -1,17 +1,14 @@
+import { Router, RouterModule } from '@angular/router';
+import { AuthStateService } from './../data-access/auth-state.service';
 import { Component, inject } from '@angular/core';
-import {  Router, RouterModule } from '@angular/router';
-import { AuthStateService } from '../data-access/auth-state.service';
+import TaskListComponent from '../../task/features/task-list/task-list.component';
 
 @Component({
-    standalone: true,
-      imports: [RouterModule ],
-    
-    selector: 'app-root',
-    template: `
-          <button (click)="logOut()"  class="btn btn-danger"  >Salir</button>
-      <router-outlet />    
-
-    `
+  selector: 'app-layout',
+  standalone: true,
+  imports: [RouterModule],
+  templateUrl: './layout.component.html',
+  styleUrl: './layout.component.scss'
 })
 export default class LayoutComponent {
   private _authState = inject(AuthStateService);
