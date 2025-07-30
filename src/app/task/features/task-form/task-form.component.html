@@ -1,13 +1,12 @@
-<p>task-form works!</p>
-
-
+<div class="container text-center p-3 mb-2 bg-dark text-white ">
+  <h4>Formulario de tareas!</h4>
+</div>
 
 <div class="container text-center">
-
-  <div class="row">
+  <div class="row p-3 mb-2 bg-success text-white  ">
     <div class="col">
     </div>
-    <div class="col">
+    <div class="col ">
       <form class="row" [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <div class="col-12 ">
           <label for="validationDefault02" class="form-label">Título </label>
@@ -27,7 +26,8 @@
 
         <div class="col-12">
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" formControlName="completed" role="switch" id="switchCheckChecked" checked>
+            <input class="form-check-input" type="checkbox" formControlName="completed" role="switch"
+              id="switchCheckChecked" checked>
             <label class="form-check-label" for="switchCheckChecked">Completado</label>
           </div>
         </div>
@@ -36,9 +36,13 @@
         </div>
         <div class="col-12">
 
-                     <button class="btn btn-primary" type="submit">Crear </button>
+          <button [disabled]="loadig()" class="btn btn-primary" type="submit">
 
-          
+            {{loadig() ? "Guardando...": "Guardar"}}
+
+          </button>
+
+
         </div>
 
       </form>
@@ -47,33 +51,3 @@
   </div>
 </div>
 <br>
-<table class="container table  table-dark table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>mdo </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>John</td>
-      <td>Doe</td>
-      <td> social</td>
-    </tr>
-  </tbody>
-</table>

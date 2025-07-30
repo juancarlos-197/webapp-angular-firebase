@@ -1,14 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { GridComponent } from '../../../components/grid/grid.component';
 import { ColumnKeys, Contact } from '../contact.interfaces';
-import { ContactCreate, ContactService } from '../contact.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { AsyncPipe } from '@angular/common';
-import { Observable, tap } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
 
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {
@@ -53,12 +47,7 @@ export class ListComponent implements OnInit {
   data = ELEMENT_DATA;
   displayedColumns: ColumnKeys<Contact> = ['id', 'name', 'phone', 'email', 'action'];
   sortables: ColumnKeys<Contact> = ['id', 'name', 'phone', 'email'];
-  private formBuilde = inject(FormBuilder)
-  private _contactSVC = inject(ContactService);
 
-  formulario = this.formBuilde.group({
-    title: ['', [Validators.required]],
-  });
   ngOnInit(): void {
     // get a reference to the user-profile collection
     //const userProfileCollection = collection(this.firestore, 'users');
@@ -66,16 +55,7 @@ export class ListComponent implements OnInit {
     //   this.users$ = collectionData(userProfileCollection) as Observable<any[]>;
   }
   async onSubmit() {
-    if (this.formulario.value) return
-    console.log('contacto', this.formulario.value);
-
-    try {
-      const { title } = this.formulario.value;
-      const contact: ContactCreate = {
-        title: title || ''
-      }
-      await this._contactSVC.addContact(contact)
-    } catch (error) {}
+    
   }
 }
 

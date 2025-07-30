@@ -32,7 +32,7 @@ interface FormSignIn {
   templateUrl: './sign-in.component.html',
   styles: ``
 })
-export class SignInComponent {
+export default class SignInComponent {
 
 
   private formBuilde = inject(FormBuilder);
