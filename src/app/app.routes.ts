@@ -3,20 +3,17 @@ import { privateGuard, publicGuard } from './core/auth.guard';
 
 export const routes: Routes = [
 
-    { canActivateChild:[publicGuard()],
+    {
+        canActivateChild: [publicGuard()],
         path: 'auth',
         loadChildren: () => import('./auth/features/auth.routes')
     },
-    { canActivateChild:[privateGuard()],
+    {
+        canActivateChild: [privateGuard()],
         path: 'tasks',
         loadComponent: () => import('./shared/ui/layout.component'),
 
         loadChildren: () => import('./task/features/task.routes')
-    },
-    {
-        path: 'contacts',
-        loadChildren: () => import('./features/contacts/contacts.route')
-    },
+    }
 
-    { path: '**', redirectTo: '/tasks' }
 ];

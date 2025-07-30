@@ -12,6 +12,10 @@ const authRoute: Routes = [
      {
         path: 'edit/:id',
         loadComponent: () => import('./task-form/task-form.component')
+    }, 
+     {
+        path: 'contacts',
+        loadComponent: () => import('../../features/contacts/list/list.component')
     }
 ];
 export default authRoute;

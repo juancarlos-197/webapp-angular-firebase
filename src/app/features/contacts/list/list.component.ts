@@ -16,6 +16,7 @@ import {
 import { ErrorStateMatcher } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { RouterLink } from '@angular/router';
 
 
 
@@ -38,12 +39,12 @@ const ELEMENT_DATA: any[] = [
   imports: [GridComponent, ReactiveFormsModule,
     MatSlideToggleModule, MatSlideToggleModule, ReactiveFormsModule,
     FormsModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule,
-    MatButtonModule,MatIconModule,
+    MatButtonModule,MatIconModule,RouterLink
   ],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
-export class ListComponent implements OnInit {
+export default class ListComponent implements OnInit {
   data = ELEMENT_DATA;
   displayedColumns: ColumnKeys<Contact> = ['id', 'name', 'phone', 'email', 'action'];
   sortables: ColumnKeys<Contact> = ['id', 'name', 'phone', 'email'];

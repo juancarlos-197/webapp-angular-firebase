@@ -2,11 +2,18 @@ import { Component, effect, inject } from '@angular/core';
 import { TableComponent } from '../ui/table/table.component';
 import { RouterLink } from '@angular/router';
 import { TaskService } from '../../data-access/task.service';
+import TaskHeaderComponent from '../task-header/task-header.component';
+import { TaskFooterComponent } from '../task-footer/task-footer.component';
+import ListComponent from '../../../features/contacts/list/list.component';
+import { TaskCursosComponent } from '../task-cursos/task-cursos.component';
+import { TaskNosotrosComponent } from '../task-nosotros/task-nosotros.component';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [TableComponent, RouterLink],
+  imports: [TableComponent, RouterLink,TaskFooterComponent,TaskCursosComponent,
+    TaskNosotrosComponent
+    ],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss'
 })

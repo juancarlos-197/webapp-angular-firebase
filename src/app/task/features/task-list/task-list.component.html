@@ -1,5 +1,23 @@
 <div class="container text-center">
+  <app-task-nosotros></app-task-nosotros>
+
   <h5>Lista de tareas!</h5>
-  <a routerLink="/tasks/new" class="btn btn-primary" href="#" role="button">Nueva Tarea</a>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <a routerLink="/tasks/new" class="btn btn-primary" href="#" role="button">Nueva Tarea</a>
+      </div>
+      <div class="col">
+        <a routerLink="/tasks/contacts" class="btn btn-primary" href="#" role="button">Contactos</a>
+      </div>
+    </div>
+
+  </div>
+
   <app-table [task]="[]" />
+  <!--<app-task-header></app-task-header>-->
+
+  <app-task-cursos></app-task-cursos>
+  <app-task-footer></app-task-footer>
 </div>

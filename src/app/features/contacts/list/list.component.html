@@ -1,8 +1,17 @@
-
 <section>
     @if (data) {
-    <app-grid [displayedColumns]="displayedColumns" [data]="data" [sortableColumns]="sortables" />
+    <div class="container text-center">
+        <h5>Contactos de lista!</h5>
+        <div class="container text-center">
+            <div class="row">
+            
+                <div class="col">
+                    <a routerLink="/tasks/" class="btn btn-primary" href="#" role="button">Atras</a>
+                </div>
+            </div>
+
+        </div>
+        <app-grid [displayedColumns]="displayedColumns" [data]="data" [sortableColumns]="sortables" />
+    </div>
     }
-
-
 </section>
