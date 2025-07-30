@@ -7,12 +7,13 @@ import { TaskFooterComponent } from '../task-footer/task-footer.component';
 import ListComponent from '../../../features/contacts/list/list.component';
 import { TaskCursosComponent } from '../task-cursos/task-cursos.component';
 import { TaskNosotrosComponent } from '../task-nosotros/task-nosotros.component';
+import { TaskCursosGratuitosComponent } from '../task-cursos-gratuitos/task-cursos-gratuitos.component';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
   imports: [TableComponent, RouterLink,TaskFooterComponent,TaskCursosComponent,
-    TaskNosotrosComponent
+    TaskNosotrosComponent, TaskCursosGratuitosComponent
     ],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss'
