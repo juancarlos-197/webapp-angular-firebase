@@ -20,6 +20,7 @@ import { SignHeaderComponent } from '../sign-header/sign-header.component';
 import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacion.component';
 import { TaskFooterComponent } from '../../../task/features/task-footer/task-footer.component';
 import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
+import { SignPresentarComponent } from '../sign-presentar/sign-presentar.component';
 
 interface FormSignUp {
   email: FormControl<string | null>;
@@ -33,7 +34,7 @@ interface FormSignUp {
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
     MatTableModule,RouterLink,GooleButtonComponent,SignPresentacionComponent,
-        SignHeaderComponent , TaskFooterComponent ,SignMensajesContactoComponent ],
+        SignHeaderComponent , TaskFooterComponent ,SignMensajesContactoComponent,SignPresentarComponent  ],
   templateUrl: './sign-up.component.html',
   styles: ``
 })

@@ -1,8 +1,8 @@
 /*CONTACTO*/
 #contacto {
     padding: 100px 15px;
-    background-color: #f3f3f3;
-    background: linear-gradient(aqua, blueviolet,  cornflowerblue, indigo), url("/img/fondo-contacto.webp");
+    background-color: #ffffff;
+    background: linear-gradient(rgb(0, 0, 0), rgb(43, 226, 186), rgb(0, 89, 130)), url("/img/fondo-contacto.webp");
 }
 
 #contacto .titulo-seccion {
@@ -28,7 +28,7 @@
     padding: 20px;
     border-radius: 20px;
     border: none;
-    border: 1px solid #919191;
+    border: 1px solid #ffffff;
 }
 
 #contacto .contenedor-form .mitad input {
@@ -43,7 +43,7 @@
     text-align: center;
     font-size: 22px;
     text-transform: uppercase;
-    color: #111135;
+    color: #ffffff;
     text-decoration: underline;
     text-decoration-color: #d3d3d3;
     text-decoration-thickness: 5px;
@@ -58,6 +58,6 @@
 }
 
 #contacto .btn-enviar:hover {
-    background-color: red;
+    background-color: rgb(20, 187, 123);
     color: #fff;
 }
