@@ -16,6 +16,8 @@ import { AuthService } from '../../data-access/auth.service';
 import { Router, RouterLink } from '@angular/router';
 import { GooleButtonComponent } from '../../ui/goole-button/goole-button.component';
 import { SignHeaderComponent } from '../sign-header/sign-header.component';
+import { TaskFooterComponent } from '../../../task/features/task-footer/task-footer.component';
+import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacion.component';
 
 interface FormSignIn {
   email: FormControl<string | null>;
@@ -28,7 +30,8 @@ interface FormSignIn {
   standalone: true,
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatTableModule, RouterLink, GooleButtonComponent,SignHeaderComponent ],
+    MatTableModule, RouterLink, GooleButtonComponent,TaskFooterComponent ,
+ ],
 
   templateUrl: './sign-in.component.html',
   styles: ``

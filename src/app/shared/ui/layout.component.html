@@ -1,9 +1,10 @@
 <div class="container text-center">
       <h4>Tareas en general!</h4>
+      <div class="container">
+            <app-toolbar (onNewContactEvent)="onClikcNewContact()" />
+      </div>
 </div>
-
-<div class="container d-flex flex-row-reverse  p-3 mb-6 bg-dark  ">
+<div class="container d-flex flex-row-reverse  p-3 mb-6 black ">
       <button (click)="logOut()" class="btn btn-danger">Salir</button>
 </div>
-
 <router-outlet />

@@ -8,12 +8,13 @@ import ListComponent from '../../../features/contacts/list/list.component';
 import { TaskCursosComponent } from '../task-cursos/task-cursos.component';
 import { TaskNosotrosComponent } from '../task-nosotros/task-nosotros.component';
 import { TaskCursosGratuitosComponent } from '../task-cursos-gratuitos/task-cursos-gratuitos.component';
+import { ToolbarComponent } from '../../../components/toolbar/toolbar.component';
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
   imports: [TableComponent, RouterLink,TaskFooterComponent,TaskCursosComponent,
-    TaskNosotrosComponent, TaskCursosGratuitosComponent
+    TaskNosotrosComponent, TaskCursosGratuitosComponent, 
     ],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.scss'
@@ -26,4 +27,7 @@ console.log('', );
 
 })*/ 
   }
+
+ 
+
 }

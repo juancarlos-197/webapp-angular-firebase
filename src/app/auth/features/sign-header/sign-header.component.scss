@@ -1,9 +1,11 @@
 /*ENCABEZADOO*/
 .logo{
-    width: 5%;
+    width: 150px;
+    height: 10%;
 }
 .encabezado {
     background-color: rgba(0, 0, 0, .8);
+    position: fixed;
     width: 100%;
     z-index: 100;
     top: 0;
@@ -15,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 10px 10px;
 }
 
 .encabezado .contenido-header h1 {
@@ -31,7 +33,7 @@
 
 .encabezado .contenido-header nav ul li a{
     text-decoration: none;
-    color: #fff;
+    color: rgb(0, 0, 0)0;
     margin: 0 12px;
     font-weight: 400;
     transition: .5s;
@@ -50,7 +52,7 @@
 }
 
 .encabezado .contenido-header .redes a:hover{
-    color: red;
+    color: #b6bbaa;
 }
 
 #icono-nav {
