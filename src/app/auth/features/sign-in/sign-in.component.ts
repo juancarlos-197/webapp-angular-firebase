@@ -18,6 +18,7 @@ import { GooleButtonComponent } from '../../ui/goole-button/goole-button.compone
 import { SignHeaderComponent } from '../sign-header/sign-header.component';
 import { TaskFooterComponent } from '../../../task/features/task-footer/task-footer.component';
 import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacion.component';
+import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
 
 interface FormSignIn {
   email: FormControl<string | null>;
@@ -30,7 +31,8 @@ interface FormSignIn {
   standalone: true,
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatTableModule, RouterLink, GooleButtonComponent,TaskFooterComponent ,
+    MatTableModule, RouterLink, GooleButtonComponent,TaskFooterComponent ,SignPresentacionComponent,
+    SignHeaderComponent, SignMensajesContactoComponent
  ],
 
   templateUrl: './sign-in.component.html',

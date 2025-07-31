@@ -16,6 +16,10 @@ import { AuthService } from '../../data-access/auth.service';
 import { toast } from 'ngx-sonner';
 import { Router, RouterLink } from '@angular/router';
 import { GooleButtonComponent } from '../../ui/goole-button/goole-button.component';
+import { SignHeaderComponent } from '../sign-header/sign-header.component';
+import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacion.component';
+import { TaskFooterComponent } from '../../../task/features/task-footer/task-footer.component';
+import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
 
 interface FormSignUp {
   email: FormControl<string | null>;
@@ -28,7 +32,8 @@ interface FormSignUp {
   standalone: true,
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatTableModule,RouterLink,GooleButtonComponent  ],
+    MatTableModule,RouterLink,GooleButtonComponent,SignPresentacionComponent,
+        SignHeaderComponent , TaskFooterComponent ,SignMensajesContactoComponent ],
   templateUrl: './sign-up.component.html',
   styles: ``
 })

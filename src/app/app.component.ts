@@ -9,8 +9,8 @@ import { SignPresentacionComponent } from './auth/features/sign-presentacion/sig
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatCardModule,SignHeaderComponent,
-    SignPresentacionComponent
+  imports: [RouterOutlet, MatCardModule,
+    
 
   ],
   templateUrl: './app.component.html',
