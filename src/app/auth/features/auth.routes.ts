@@ -7,6 +7,10 @@ const authRoute: Routes = [
     },{
         path: 'sign-up',
         loadComponent: () => import('./sign-up/sign-up.component')
-    }
+    },
+    {
+            path: '**',redirectTo:'/sign-in',pathMatch:'full'
+    
+        },
 ];
 export default authRoute;

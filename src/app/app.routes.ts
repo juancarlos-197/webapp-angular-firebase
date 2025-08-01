@@ -8,12 +8,18 @@ export const routes: Routes = [
         path: 'auth',
         loadChildren: () => import('./auth/features/auth.routes')
     },
+  
     {
         canActivateChild: [privateGuard()],
         path: 'tasks',
         loadComponent: () => import('./shared/ui/layout.component'),
 
         loadChildren: () => import('./task/features/task.routes')
-    }
+    },
+ 
+  {
+        canActivateChild: [privateGuard()],
+        path: '**',redirectTo:'/tasks',pathMatch:'full'
 
+    }
 ];
