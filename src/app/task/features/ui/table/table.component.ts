@@ -1,5 +1,5 @@
-import { Component, effect, input } from '@angular/core';
-import { Task } from '../../../data-access/task.service';
+import { Component, effect, inject, input } from '@angular/core';
+import { Task, TaskService } from '../../../data-access/task.service';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,12 +10,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './table.component.scss'
 })
 export class TableComponent {
-task= input.required<Task[]>();
+//task= input.required<Task[]>();
+//public userTaskService = inject(TaskService);
 
 constructor(){
-  effect(()=>{
-    console.log(this.task());
-    
-  })
+ 
 }
 }

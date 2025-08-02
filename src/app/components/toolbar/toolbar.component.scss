@@ -1,22 +1,15 @@
-.ac{
+.fondo{
     background-color:black ;
     color: white;
 }
-.b{
-    color: white;
-}
+
 
 .presentacion a{
-    text-decoration: none;
-    display: inline-block;
-    margin: 15px;
-    padding: 8px 10px;
-    border: 2px solid #fff;
-    border-radius: 50px;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
+   display: block;
+    margin: auto;
+    cursor: pointer;
     transition: .5s;
+    padding: 10px 20px !important;
 }
 
 .presentacion a:hover{
@@ -28,7 +21,7 @@
 
 
 
-.example-spacer {
+.spacer {
   flex: 1 1 auto;
 }
 

@@ -21,6 +21,9 @@ import { ToolbarComponent } from '../../../components/toolbar/toolbar.component'
 })
 export default class TaskListComponent {
   //tasks = inject(TaskService).getTasks;
+  //tasks = inject(TaskService).getTasks;
+
+
   constructor() {
  /** effect(()=>{
 console.log('', );
