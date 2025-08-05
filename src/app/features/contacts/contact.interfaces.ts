@@ -5,7 +5,6 @@ export interface Contact {
     title: string;
     body: string;
     action: string;
-    created: Timestamp;
-    updated: Timestamp;
+    
 
 } 

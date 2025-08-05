@@ -42,14 +42,11 @@ public userTaskService = inject(TaskService);
   sortables: ColumnKeys<Contact> = ['id', 'title', 'body'];
 
   ngOnInit(): void {
-    // get a reference to the user-profile collection
-    //const userProfileCollection = collection(this.firestore, 'users');
-    // get documents (data) from the collection using collectionData
-    //   this.users$ = collectionData(userProfileCollection) as Observable<any[]>;
-    this.getPosts()
+ 
+    this.getContactoPost1()
   }
-  getPosts(){
-      return this.userTaskService.getPosts1().subscribe({
+  getContactoPost1(){
+      return this.userTaskService.getContactos1().subscribe({
         next:(data)=>{console.log(data)
         this.data=data
         }
