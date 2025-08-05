@@ -7,7 +7,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { environment } from '../environments/environment';
 import { getAuth, provideAuth } from '@angular/fire/auth';
-import { HttpClient, HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }),
@@ -16,7 +16,6 @@ export const appConfig: ApplicationConfig = {
   provideFirestore(() => getFirestore()),
   provideAnimationsAsync(),
   provideAuth(() => getAuth()), provideAnimationsAsync(),
-importProvidersFrom(
-HttpClient)
+provideHttpClient()
 ]
 };

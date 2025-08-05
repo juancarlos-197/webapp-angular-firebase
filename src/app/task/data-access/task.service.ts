@@ -33,16 +33,24 @@ export class TaskService {
     users: [],
     loading: true
   })
-  public usersT = computed(() => this.#state().users)
-  public loadingT = computed(() => this.#state().loading)
+  private http = inject(HttpClient);
+  public usersT = computed(() => this.#state().users);
+  public loadingT = computed(() => this.#state().loading);
+    url= 'https://jsonplaceholder.typicode.com/posts'
 
 
-  constructor(private httpClient: HttpClient) { }
-
-  public getSettingsInfos(userId: number): Observable<any> {
-    return this.httpClient.get<any>(`/settings/${userId}`);
+  constructor() {
+    this.http.get<UserResponseTaskModel>(this.url)
+      .pipe(delay(1500))
+      .subscribe(res => {
+        this.#state.set({
+          loading: false,
+          users: res.data
+        })
+      })
+      
+      
   }
- 
 
   // private _collection = collection(this._firestore, PATH);
 
@@ -53,6 +61,11 @@ export class TaskService {
   )**/
   /**  create(task: TaskCreate) {
       return addDoc(this._collection, task)
-    }*/
+            return addDoc(this._collection, task)
 
+
+    }*/
+getPosts1(){
+  return this.http.get('https://jsonplaceholder.typicode.com/posts')
+}
 }

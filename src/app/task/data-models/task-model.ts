@@ -17,3 +17,11 @@ export interface UserTaskModel {
   first_name: string;
   
 }
+export interface PostsTaskModel {
+    userid: number;
+  id: number;
+  title: string;
+    body: string;
+  message: string;
+
+}
