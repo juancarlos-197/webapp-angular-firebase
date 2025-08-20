@@ -18,10 +18,10 @@
                     {{element[column]}}
                     @if (column == 'action') {
 
-                    <button mat-icon-button color="primary">
+                    <button mat-icon-button color="primary" matButton="elevated" (click)="openDialogTaskEdit('3000ms', '1500ms')">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn">
+                    <button mat-icon-button color="warn" matButton="elevated" (click)="openDialogTaskEliminar('6000ms', '2500ms')">
                         <mat-icon>delete</mat-icon>
                     </button>
                     }
