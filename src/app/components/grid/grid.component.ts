@@ -21,12 +21,14 @@ import { MatIcon } from '@angular/material/icon';
 import { TaskDialogoEditarComponent } from '../../task/features/task-dialogo-editar/task-dialogo-editar.component';
 import { TaskDialogoEliminarComponent } from '../../task/features/task-dialogo-eliminar/task-dialogo-eliminar.component';
 import { APP_CONSTANTS } from '../shared/constants';
+import { CommonModule } from '@angular/common';
+
 const MATERIAL_MODULES =[MatTableModule,MatSortModule,MatPaginatorModule,MatButtonModule,MatIcon]
 
 @Component({
   selector: 'app-grid',
   standalone: true,
-  imports: [MATERIAL_MODULES,FilterComponent ],
+  imports: [MATERIAL_MODULES,FilterComponent ,CommonModule ],
   templateUrl: './grid.component.html',
   styleUrl: './grid.component.scss'
 })
