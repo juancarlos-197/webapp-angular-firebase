@@ -1,7 +1,12 @@
 <section class="mt-1">
+    <ng-template #templateList>
+        <h4>Bienvenidos</h4>
+    </ng-template>
+    <div *ngTemplateOutlet="templateList"></div>
     <pre>
-    {{valueToFilter()  }}
-</pre>
+      <h5 *ngIf="templateList">App Web</h5>
+      {{valueToFilter()  }}
+    </pre>
     <app-filter [label]="'Filter ...'" [placeholder]="'Search...'" [(filter)]="valueToFilter" />
     <div class="mat-elevation-z8">
         <table mat-table matSort [dataSource]="dataSource">
@@ -9,6 +14,7 @@
             <!-- Position Column -->
             <ng-container [matColumnDef]="column">
                 @if (this.sortableColumns().includes(column)) {
+
                 <th mat-header-cell *matHeaderCellDef [ngClass]=" ' blue' " mat-sort-header=""> {{column}}. </th>
                 }@else {
                 <th mat-header-cell *matHeaderCellDef [ngClass]=" ' blue' "> {{column}}. </th>
@@ -18,10 +24,12 @@
                     {{element[column]}}
                     @if (column == 'action') {
 
-                    <button mat-icon-button color="primary" matButton="elevated" (click)="openDialogTaskEdit('3000ms', '1500ms')">
+                    <button mat-icon-button color="primary" matButton="elevated"
+                        (click)="openDialogTaskEdit('3000ms', '1500ms')">
                         <mat-icon>edit</mat-icon>
                     </button>
-                    <button mat-icon-button color="warn" matButton="elevated" (click)="openDialogTaskEliminar('6000ms', '2500ms')">
+                    <button mat-icon-button color="warn" matButton="elevated"
+                        (click)="openDialogTaskEliminar('6000ms', '2500ms')">
                         <mat-icon>delete</mat-icon>
                     </button>
                     }
