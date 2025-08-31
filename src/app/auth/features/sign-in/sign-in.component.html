@@ -1,46 +1,44 @@
 <app-sign-header></app-sign-header>
 <app-sign-presentacion></app-sign-presentacion>
-<div class="container card mb-3" style="width: 1111rem;">
+<div class="container card mb-3" style="width: 1111rem">
     <div class="card-body"></div>
 </div>
 
 <div class="container card text-center">
     <app-sign-presentar></app-sign-presentar>
-    <div class="card-body ">
-        <h5 class="card-title p-3 mb-2 bg-dark text-white ">Iniciar Sesión </h5>
+    <div class="card-body">
+        <h5 class="card-title p-3 mb-2 bg-dark text-white">Iniciar Sesión</h5>
         <p class="card-text">
-            Cuenta de Google para ir a Gmail. Esta cuenta estará disponible para otras aplicaciones de Google en el
-            navegador.
+            Cuenta de Google para ir a Gmail. Esta cuenta estará disponible para otras
+            aplicaciones de Google en el navegador.
         </p>
         <a href="#" class="btn btn-primary"></a>
     </div>
     <div class="container text-center">
         <div class="row">
-            <div class="col">
-            </div>
+            <div class="col"></div>
             <div class="col">
                 <form class="row" [formGroup]="formulario" (ngSubmit)="onSubmit()">
                     <app-goole-button (onClick)="signInWithGoogle()" />
-                    <div class="col-12 ">
+                    <div class="col-12">
                         <label for="validationDefault02" class="form-label">Email </label>
                         <input type="text" class="form-control" id="validationDefault02"
-                            placeholder="exercise@gmail.com" formControlName="email" required>
+                            placeholder="exercise@gmail.com" formControlName="email" required />
                         @if (isRequired('email')) {
                         <div class="alert alert-danger" role="alert">
                             Este campo es requerido
                         </div>
-                        }
-                        @if (hasEmailError()) {
+                        } @if (hasEmailError()) {
                         <div class="alert alert-danger" role="alert">
-                            El correo debe ser valido </div>
+                            El correo debe ser valido
+                        </div>
                         }
-
                     </div>
 
                     <div class="col-12">
                         <label for="validationDefault04" class="form-label">Password</label>
                         <input type="text" class="form-control" id="validationDefault03" placeholder="....."
-                            formControlName="password">
+                            formControlName="password" />
                         @if (isRequired('password')) {
                         <div class="alert alert-danger" role="alert">
                             Este campo es requerido
@@ -49,32 +47,55 @@
                     </div>
                     <div class="col-12">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required />
                             <label class="form-check-label" for="invalidCheck2">
                                 Aceptar términos y condiciones.
                             </label>
                         </div>
                     </div>
                     <div class="col-12">
-                        <button class="btn btn-primary" type="submit">Enviar </button>
+                        <button class="btn btn-primary" type="submit">Enviar</button>
                     </div>
                     <div class="alert alert-primary" role="alert">
-                        Aún no tienes una cuenta? <a routerLink="/auth/sign-up" class="alert-link">Crea una cuenta</a>.
+                        Aún no tienes una cuenta?
+                        <a routerLink="/auth/sign-up" class="alert-link">Crea una cuenta</a>.
                     </div>
                 </form>
             </div>
-            <div class="col">
-
-            </div>
+            <div class="col"></div>
         </div>
     </div>
 
-    <div class="card-body ">
+    <div class="card-body presentacion">
         <h5 class="card-title"></h5>
-        <p class="card-text">Con texto de apoyo a continuación como introducción natural a contenido adicional.</p>
+        <ng-template #templateList>
+            <h2><span style="color: rgb(50, 190, 132)">Ng-template Web </span></h2>
+        </ng-template>
+        <div *ngTemplateOutlet="templateList"></div>
+        <pre>
+    <h5 *ngIf="templateList">
+        <p class="card-text">
+    
+            El elemento de Angular NG-TEMPLATE define una plantilla que no se representa de forma predeterminada.
+    
+            Con NG-TEMPLATE, puedes definir contenido de plantilla que solo será procesado por Angular cuando tú, directa o
+            indirectamente, le indiques específicamente que lo haga, lo que te permite tener
+            control total sobre cómo y cuándo se muestra el contenido.
+    
+            Tenga en cuenta que si envuelve contenido dentro de un objeto NG-TEMPLATE sin indicarle a Angular que lo
+            renderice, dicho contenido no aparecerá en la página. Por ejemplo, vea el siguiente código HTML: al procesarlo,
+            Angular no renderizará el "Hip!" central en la frase "¡Hip! ¡Hip! ¡Hurra!" debido al "SUP" circundante
+            NG-TEMPLATE .
+    
+    
+        </p>
+    </h5>
+        
+    </pre>
+
         <a href="#" class="btn btn-primary"></a>
     </div>
-    <div class="card-footer text-body-secondary">... </div>
+    <div class="card-footer text-body-secondary">...</div>
 </div>
 <app-sign-mensajes-contacto></app-sign-mensajes-contacto>
 <app-task-footer></app-task-footer>

@@ -20,6 +20,7 @@ import { TaskFooterComponent } from '../../../task/features/task-footer/task-foo
 import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacion.component';
 import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
 import { SignPresentarComponent } from '../sign-presentar/sign-presentar.component';
+import { CommonModule } from '@angular/common';
 
 interface FormSignIn {
   email: FormControl<string | null>;
@@ -33,7 +34,7 @@ interface FormSignIn {
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
     MatTableModule, RouterLink, GooleButtonComponent,TaskFooterComponent ,SignPresentacionComponent,
-    SignHeaderComponent, SignMensajesContactoComponent, SignPresentarComponent
+    SignHeaderComponent, SignMensajesContactoComponent, SignPresentarComponent,CommonModule
  ],
 
   templateUrl: './sign-in.component.html',
