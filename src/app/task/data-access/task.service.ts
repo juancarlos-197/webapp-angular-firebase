@@ -9,28 +9,16 @@ export interface Task {
 export type TaskCreate = Omit<Task, 'id'>
 const PATH = 'tasks'
 
-
-
-
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
-// Servicio de Contactos
+  // Servicio de Contactos
   private http = inject(HttpClient);
-  
-  constructor() {
-    
-      
-      
+
+  constructor() {}
+
+  getContactos1() {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts')
   }
-
-
-
-
-getContactos1(){
-  return this.http.get('https://jsonplaceholder.typicode.com/posts')
-}
 }
