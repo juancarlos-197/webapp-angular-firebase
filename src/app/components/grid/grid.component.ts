@@ -42,6 +42,9 @@ sortableColumns=input<string[]>([]);
 
 dataSource= new MatTableDataSource<T>()
 valueToFilter= signal('');
+ count = signal(5);
+// Signals are getter functions - calling them reads their value.
+
 private readonly _sort= viewChild.required<MatSort>(MatSort);
 private readonly _paginator= viewChild.required<MatPaginator>(MatPaginator);
 
@@ -51,6 +54,13 @@ private readonly _paginator= viewChild.required<MatPaginator>(MatPaginator);
 
 
 constructor(){
+
+  console.log('El recuento es:: ' + this.count()); // 5
+  this.count.set(10);
+  console.log('El recuento es:: ' + this.count()); // 10
+  this.count.update(x => x + 1);
+  console.log('El recuento es:: ' + this.count());// 11
+
   effect(()=>{
     if (this.valueToFilter()) {
       this.dataSource.filter=this.valueToFilter()

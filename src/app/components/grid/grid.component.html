@@ -1,12 +1,4 @@
 <section class="mt-1">
-    <ng-template #templateList>
-        <h4>Bienvenidos</h4>
-    </ng-template>
-    <div *ngTemplateOutlet="templateList"></div>
-    <pre>
-      <h5 *ngIf="templateList">App Web</h5>
-      {{valueToFilter()  }}
-    </pre>
     <app-filter [label]="'Filter ...'" [placeholder]="'Search...'" [(filter)]="valueToFilter" />
     <div class="mat-elevation-z8">
         <table mat-table matSort [dataSource]="dataSource">
@@ -43,4 +35,31 @@
             aria-label="Select page of periodic elements">
         </mat-paginator>
     </div>
+
+    <div class="card text-center">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <ng-template #templateList>
+                <h4>Template syntax (Sintaxis de la plantilla)</h4>
+            </ng-template>
+            <div *ngTemplateOutlet="templateList"></div>
+            <pre>
+      <p class="card-text" *ngIf="templateList">En Angular, una plantilla es un fragmento de HTML. 
+        Usa una sintaxis especial dentro de una plantilla para aprovechar muchas de las funciones de Angular </p>
+      {{valueToFilter()  }}
+    </pre>
+        </div>
+        <div class="card-footer text-body-secondary">... </div>
+    </div>
+    <div class="card text-center">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h5 class="card-title">Writable signals</h5>
+            <p class="card-text">Las señales escribibles proporcionan una API para actualizar sus valores directamente.
+                Se crean llamando a la signalfunción con el valor inicial de la señal:</p>
+            <a href="#" class="btn btn-primary">Núnero {{count()}}</a>
+        </div>
+        <div class="card-footer text-body-secondary">... </div>
+    </div>
+
 </section>
