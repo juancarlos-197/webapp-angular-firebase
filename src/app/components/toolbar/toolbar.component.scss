@@ -1,27 +1,20 @@
-.fondo{
-    background-color:black ;
+.fondo {
+    background-color: black;
     color: white;
 }
 
-
-.presentacion a{
-   display: block;
+.presentacion a {
+    display: block;
     margin: auto;
     cursor: pointer;
     transition: .5s;
     padding: 10px 20px !important;
 }
 
-.presentacion a:hover{
+.presentacion a:hover {
     background-color: rgb(20, 187, 123);
 }
 
-
-
-
-
-
 .spacer {
-  flex: 1 1 auto;
+    flex: 1 1 auto;
 }
-
