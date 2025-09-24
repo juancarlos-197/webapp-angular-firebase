@@ -92,10 +92,18 @@
     </h5>
         
     </pre>
-
+        <h5 class="card-title"></h5>
+        <ng-template #templateList2>
+            <h2><span style="color: rgb(50, 190, 132)"> Google Maps </span></h2>
+        </ng-template>
+        <div *ngTemplateOutlet="templateList2"></div>
+        <!-- google-maps-demo.component.html in-->
+        <google-map height="400px" width="100%" [center]="center" [zoom]="zoom" />
         <a href="#" class="btn btn-primary"></a>
     </div>
     <div class="card-footer text-body-secondary">...</div>
 </div>
+
+
 <app-sign-mensajes-contacto></app-sign-mensajes-contacto>
 <app-task-footer></app-task-footer>

@@ -21,6 +21,7 @@ import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacio
 import { TaskFooterComponent } from '../../../task/features/task-footer/task-footer.component';
 import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
 import { SignPresentarComponent } from '../sign-presentar/sign-presentar.component';
+import {GoogleMap} from '@angular/google-maps';
 
 interface FormSignUp {
   email: FormControl<string | null>;
@@ -34,11 +35,16 @@ interface FormSignUp {
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
     MatTableModule,RouterLink,GooleButtonComponent,SignPresentacionComponent,
-        SignHeaderComponent , TaskFooterComponent ,SignMensajesContactoComponent,SignPresentarComponent  ],
+        SignHeaderComponent , TaskFooterComponent ,SignMensajesContactoComponent,SignPresentarComponent,
+        GoogleMap],
   templateUrl: './sign-up.component.html',
   styles: ``
 })
 export default class SignUpComponent {
+
+
+  center: google.maps.LatLngLiteral = {lat: 2.4574701, lng: -76.6411342};
+  zoom = 14;
 
 
   private formBuilde = inject(FormBuilder);

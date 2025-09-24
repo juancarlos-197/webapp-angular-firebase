@@ -21,6 +21,7 @@ import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacio
 import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
 import { SignPresentarComponent } from '../sign-presentar/sign-presentar.component';
 import { CommonModule } from '@angular/common';
+import {GoogleMap} from '@angular/google-maps';
 
 interface FormSignIn {
   email: FormControl<string | null>;
@@ -33,15 +34,16 @@ interface FormSignIn {
   standalone: true,
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatTableModule, RouterLink, GooleButtonComponent,TaskFooterComponent ,SignPresentacionComponent,
-    SignHeaderComponent, SignMensajesContactoComponent, SignPresentarComponent,CommonModule
- ],
+    MatTableModule, RouterLink, GooleButtonComponent, TaskFooterComponent, SignPresentacionComponent,
+    SignHeaderComponent, SignMensajesContactoComponent, SignPresentarComponent, CommonModule, GoogleMap],
 
   templateUrl: './sign-in.component.html',
   styles: ``
 })
 export default class SignInComponent {
 
+  center: google.maps.LatLngLiteral = {lat: 2.4574701, lng: -76.6411342};
+  zoom = 14;
 
   private formBuilde = inject(FormBuilder);
   private _authService = inject(AuthService);
