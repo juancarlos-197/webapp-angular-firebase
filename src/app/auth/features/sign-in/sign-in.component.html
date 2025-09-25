@@ -98,7 +98,22 @@
         </ng-template>
         <div *ngTemplateOutlet="templateList2"></div>
         <!-- google-maps-demo.component.html in-->
-        <google-map height="400px" width="100%" [center]="center" [zoom]="zoom" />
+
+
+        <input type="range" name="zoom" min="0" max="20" class="w-full" [(ngModel)]="zoom">
+  
+        <google-map height="400px" width="100%"  [center]="center" [zoom]="zoom()">
+            <map-marker #marker="mapMarker" [position]="center" (mapClick)="openInfoWindow(marker)" />
+            <map-info-window>
+                <div>
+                    <h3>Desarrollo Full-Stack</h3>
+                    <h6>Juán Carlos Albán Luna </h6>
+                    <p>{{ center.lat }}, {{ center.lng }}</p>
+                </div>
+            </map-info-window>
+        </google-map>
+
+
         <a href="#" class="btn btn-primary"></a>
     </div>
     <div class="card-footer text-body-secondary">...</div>

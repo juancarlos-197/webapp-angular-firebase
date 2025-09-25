@@ -4,6 +4,7 @@ import {
   signInWithPopup, GoogleAuthProvider
 } from '@angular/fire/auth';
 
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 export interface User {
   email: string;
@@ -27,4 +28,13 @@ export class AuthService {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(this._auth, provider)
   }
+
+   private http = inject(HttpClient);
+  
+    constructor() {}
+  
+    getGoogleMaps() {
+    return this.http.get('https://jsonplaceholder.typicode.com/posts')
+    }
+
 }

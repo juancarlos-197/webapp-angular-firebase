@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { HttpClient, } from '@angular/common/http';
+import { Component, inject, signal, ViewChild } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 ;
 import { FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,8 +22,9 @@ import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacio
 import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
 import { SignPresentarComponent } from '../sign-presentar/sign-presentar.component';
 import { CommonModule } from '@angular/common';
-import {GoogleMap} from '@angular/google-maps';
+import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 
+import { A11yModule } from "@angular/cdk/a11y";
 interface FormSignIn {
   email: FormControl<string | null>;
   password: FormControl<string | null>;
@@ -35,19 +37,31 @@ interface FormSignIn {
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
     MatTableModule, RouterLink, GooleButtonComponent, TaskFooterComponent, SignPresentacionComponent,
-    SignHeaderComponent, SignMensajesContactoComponent, SignPresentarComponent, CommonModule, GoogleMap],
+    SignHeaderComponent, SignMensajesContactoComponent, SignPresentarComponent, CommonModule, GoogleMap, A11yModule,
+  MapInfoWindow,MapMarker],
 
   templateUrl: './sign-in.component.html',
   styles: ``
 })
 export default class SignInComponent {
 
-  center: google.maps.LatLngLiteral = {lat: 2.4574701, lng: -76.6411342};
-  zoom = 14;
+  @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow = {} as MapInfoWindow;
+  center: google.maps.LatLngLiteral = {lat:2.4482548, lng: -76.6361969};
+  zoom = signal(15);
 
+
+  openInfoWindow(marker: MapMarker) {
+    this.infoWindow.open(marker);
+  }
+ 
+  
+  
   private formBuilde = inject(FormBuilder);
   private _authService = inject(AuthService);
   private _router = inject(Router);
+  constructor(){
+
+  }
 
   isRequired(field: 'email' | 'password') {
     return isRequired(field, this.formulario)

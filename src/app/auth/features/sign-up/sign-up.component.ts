@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal, ViewChild } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 ;
 import { FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -21,7 +21,7 @@ import { SignPresentacionComponent } from '../sign-presentacion/sign-presentacio
 import { TaskFooterComponent } from '../../../task/features/task-footer/task-footer.component';
 import { SignMensajesContactoComponent } from '../sign-mensajes-contacto/sign-mensajes-contacto.component';
 import { SignPresentarComponent } from '../sign-presentar/sign-presentar.component';
-import {GoogleMap} from '@angular/google-maps';
+import { GoogleMap, MapInfoWindow, MapMarker } from '@angular/google-maps';
 
 interface FormSignUp {
   email: FormControl<string | null>;
@@ -34,18 +34,20 @@ interface FormSignUp {
   standalone: true,
   imports: [MatCardModule, FormsModule, MatFormFieldModule,
     MatInputModule, ReactiveFormsModule, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatTableModule,RouterLink,GooleButtonComponent,SignPresentacionComponent,
-        SignHeaderComponent , TaskFooterComponent ,SignMensajesContactoComponent,SignPresentarComponent,
-        GoogleMap],
+    MatTableModule, RouterLink, GooleButtonComponent, SignPresentacionComponent,
+    SignHeaderComponent, TaskFooterComponent, SignMensajesContactoComponent, SignPresentarComponent,
+    GoogleMap, MapInfoWindow, MapMarker],
   templateUrl: './sign-up.component.html',
   styles: ``
 })
 export default class SignUpComponent {
 
-
-  center: google.maps.LatLngLiteral = {lat: 2.4574701, lng: -76.6411342};
-  zoom = 14;
-
+  @ViewChild(MapInfoWindow) infoWindow: MapInfoWindow = {} as MapInfoWindow;
+  center: google.maps.LatLngLiteral = { lat: 2.4482548, lng: -76.6361969 };
+  zoom = signal(15);
+  openInfoWindow(marker: MapMarker) {
+    this.infoWindow.open(marker);
+  }
 
   private formBuilde = inject(FormBuilder);
   private _authService = inject(AuthService);
@@ -63,17 +65,14 @@ export default class SignUpComponent {
 
   })
 
-
   async onSubmit() {
-   console.log('contacto', this.formulario.getRawValue());
-      if (this.formulario.invalid) return;
+    console.log('contacto', this.formulario.getRawValue());
+    if (this.formulario.invalid) return;
     try {
-   
       const { email, password } = this.formulario.value;
-
       if (!email || !password) return;
       await this._authService.signUp({ email, password });
-            this._router.navigateByUrl('/tasks')
+      this._router.navigateByUrl('/tasks')
 
     } catch (error) {
 
@@ -82,13 +81,12 @@ export default class SignUpComponent {
 
   }
 
-async  signInWithGoogle(){
-  try {
-    await this._authService.signInWithGoogle()
-  } catch (error) {
-    
-  }
-}
+  async signInWithGoogle() {
+    try {
+      await this._authService.signInWithGoogle()
+    } catch (error) {
 
+    }
+  }
 
 }
